@@ -32,7 +32,14 @@ declare function getValue(key: string): any {
 }
 const str: string = getValue('my Name');
 
-// Void
+// Void, in the absence of no return
 function warnUser(): void {
   console.log('This is a warning message') 
 }
+
+// Type assertions
+let someValue: unknown = 'this is a string';
+let strLength: number = (someValue as string).length;
+// or
+let strrLength: number = (<string>someValue).length;
+
